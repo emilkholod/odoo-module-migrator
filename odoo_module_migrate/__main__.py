@@ -91,11 +91,10 @@ def get_parser():
     )
 
     main_parser.add_argument(
-        "-nc",
-        "--no-commit",
+        "-c",
+        "--commit",
         action="store_true",
-        default=False,
-        help="Enable this option, if you don't want that the library commits"
+        help="Enable this option, if you want that the library commits"
         " the changes. (using git add and git commit command)",
     )
 
@@ -110,11 +109,11 @@ def get_parser():
 
     # TODO: Move to `argparse.BooleanOptionalAction` once in Python 3.9+
     main_parser.add_argument(
-        "-nrmf",
-        "--no-remove-migration-folder",
+        "-rmf",
+        "--remove-migration-folder",
         dest="remove_migration_folder",
-        action="store_false",
-        help="Skip removing migration folder",
+        action="store_true",
+        help="Remove migration folder",
     )
 
     return main_parser
@@ -147,7 +146,7 @@ def main(args=False):
             module_names,
             args.format_patch,
             args.remote_name,
-            not args.no_commit,
+            args.commit,
             args.pre_commit,
             args.remove_migration_folder,
         )
