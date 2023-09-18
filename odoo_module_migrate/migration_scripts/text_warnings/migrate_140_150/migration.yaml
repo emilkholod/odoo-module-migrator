@@ -1,0 +1,18 @@
+.js:
+  "@odoo-module": "It seems we need to rename the file to finish with .esm.js (rename also the assets) to enable ESLint compatibility"
+  web.patchMixin: "There is no `web.patchMixin` in Odoo 15. Please refactor and test"
+  odoo.define: "We should `odoo-module` syntax"
+
+
+.py:
+  ('|")ir.model('|"): Check that we use sudo() to access to `ir.model` model
+  SavepointCase: Replace with `TransactionCase`
+  with.*.manage\(: "There's no need of using the with Environment.manage(): context statement anymore"
+  def migrate\(: "Check migrations. Update noupdate records if needed. After that - delete migration - new migrations shouldn't exist"
+
+
+.xml:
+  t-esc: Check that we can replace with `t-out` tag
+  ${: "Jinja syntax in mail templates has been replaced. It seems it should replaced: use {{ and }} instead of ${ and }"
+  inherit_id.*assets: "It seems you should place your assets in separate bundle under `assets` key in `__manifest__.py` file"
+  template.*inherit_id.*web\.: "It seems you should place your assets in separate bundle under `assets` key in `__manifest__.py` file"

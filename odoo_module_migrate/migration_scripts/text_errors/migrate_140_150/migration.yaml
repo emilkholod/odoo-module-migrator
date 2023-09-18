@@ -1,0 +1,5 @@
+.py:
+  " *('|\")qweb('|\")[ ]*:": "Remove `qweb` key. You should place `.xml`/`.js` qweb into `web.assets_common`/`web.assets_backend`/`web.assets_qweb` under `assets` key in `__manifest__.py` file"
+
+.xml:
+  t-raw: Should be replaced with `t-out` tag
