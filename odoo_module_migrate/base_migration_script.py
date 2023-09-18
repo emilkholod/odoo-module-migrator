@@ -92,6 +92,8 @@ class BaseMigrationScript(object):
                 with open(filename) as f:
                     new_rules = yaml.safe_load(f)
                     if rules[rule]["type"] == TYPE_DICT_OF_DICT:
+                        if not new_rules:
+                            continue
                         for f_type, data in new_rules.items():
                             if f_type not in rules[rule]["doc"]:
                                 rules[rule]["doc"][f_type] = {}

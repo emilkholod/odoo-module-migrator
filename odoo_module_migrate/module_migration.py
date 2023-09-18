@@ -31,6 +31,12 @@ class ModuleMigration:
 
         # Apply migration script
         for migration_script in self._migration._migration_scripts:
+            if migration_script.__doc__:
+                logger.info("-" * 60)
+                logger.info(
+                    f"Information about {migration_script.__module__.split('.')[-1]} migration:"
+                )
+                logger.info(migration_script.__doc__)
             migration_script.run(
                 self._module_path,
                 self._get_manifest_path(),
