@@ -1,0 +1,5 @@
+.py:
+  web.assets_qweb: "Remove `web.assets_qweb` key. You should place `.xml`/`.js` into `web.assets_common`/`web.assets_backend`/`web.assets_frontend` under `assets` key in `__manifest__.py` file"
+
+.xml:
+  field name=('|")groups_id: Check groups in view - in view it should be replaced with `groups`.
