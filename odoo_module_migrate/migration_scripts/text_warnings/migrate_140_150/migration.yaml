@@ -1,7 +1,7 @@
 .js:
   "@odoo-module": "It seems we need to rename the file to finish with .esm.js (rename also the assets) to enable ESLint compatibility"
   web.patchMixin: "There is no `web.patchMixin` in Odoo 15. Please refactor and test"
-  odoo.define: "We should `odoo-module` syntax"
+  odoo.define: "We should use `odoo-module` syntax"
 
 
 .py:
